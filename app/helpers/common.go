@@ -20,7 +20,7 @@ func GetEnv(key string) string {
 }
 
 func CheckRequiredEnvs() {
-	requiredEnvVars := []string{"SERVER_PORT", "DB_PORT", "DB_HOST", "DB_NAME", "DB_USER", "DB_PASSWORD", "LOG_LEVEL"}
+	requiredEnvVars := []string{"SERVER_PORT", "RABBIT_MQ_CONNECTION", "LOG_LEVEL"}
 
 	for _, envVar := range requiredEnvVars {
 		if value, exists := os.LookupEnv(envVar); !exists || value == "" {
